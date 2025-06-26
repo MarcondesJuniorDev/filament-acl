@@ -53,7 +53,9 @@ class UserResource extends Resource
                 Select::make('roles')
                     ->label('Funções')
                     ->multiple()
-                    ->relationship('roles', 'name')
+                    ->relationship('roles', 'name', fn (Builder $query)=>
+                        auth()->user()->hasRole('Admin') ? $query : $query->where('name', '!=', 'Admin')
+                    )
                     ->preload()
                     ->required(fn (string $context) => $context === 'create'),
             ]);
