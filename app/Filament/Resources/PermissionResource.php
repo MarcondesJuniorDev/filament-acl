@@ -19,8 +19,10 @@ class PermissionResource extends Resource
     protected static ?string $label = 'Permissão';
 
     protected static ?string $pluralLabel = 'Permissões';
+    protected static ?string $slug = 'permissoes';
 
-    protected static ?string $navigationGroup = 'Gerenciamento';
+    protected static ?string $navigationGroup = 'Gerenciamento de Acesso';
+    protected static ?int $navigationSort = 3;
 
     protected static ?string $navigationIcon = 'heroicon-o-shield-check';
 

@@ -20,8 +20,10 @@ class RoleResource extends Resource
     protected static ?string $label = 'Função';
 
     protected static ?string $pluralLabel = 'Funções';
+    protected static ?string $slug = 'funcoes';
 
-    protected static ?string $navigationGroup = 'Gerenciamento';
+    protected static ?string $navigationGroup = 'Gerenciamento de Acesso';
+    protected static ?int $navigationSort = 2;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
