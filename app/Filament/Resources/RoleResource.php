@@ -34,6 +34,12 @@ class RoleResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->label('Função')
                     ->required(),
+                Forms\Components\Select::make(name: 'permissions')
+                    ->label('Permissões')
+                    ->multiple()
+                    ->relationship('permissions', 'name')
+                    ->preload()
+                    ->required(),
             ]);
     }
 
@@ -44,6 +50,10 @@ class RoleResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->label('Função')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('permissions_count')
+                    ->label('Permissões')
+                    ->counts('permissions')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Criado Em')
                     ->dateTime('d/m/Y H:i')
