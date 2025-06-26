@@ -33,6 +33,12 @@ class PermissionResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->label('Permissão')
                     ->required(),
+                Forms\Components\Select::make('roles')
+                    ->label('Funções')
+                    ->multiple()
+                    ->relationship('roles', 'name')
+                    ->preload()
+                    ->required(),
             ]);
     }
 
