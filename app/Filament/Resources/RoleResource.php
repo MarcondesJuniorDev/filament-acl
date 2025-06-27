@@ -33,6 +33,7 @@ class RoleResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->label('Função')
+                    ->unique(ignoreRecord: true)
                     ->required(),
                 Forms\Components\Select::make(name: 'permissions')
                     ->label('Permissões')

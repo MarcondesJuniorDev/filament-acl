@@ -32,6 +32,7 @@ class PermissionResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->label('Permissão')
+                    ->unique(ignoreRecord: true)
                     ->required(),
                 Forms\Components\Select::make('roles')
                     ->label('Funções')
